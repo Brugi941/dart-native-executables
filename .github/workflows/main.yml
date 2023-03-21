@@ -11,7 +11,7 @@ jobs:
         os: [ubuntu-latest, windows-latest]
         include:
           - os: ubuntu-latest
-            output-name: patch_caller.exe
+            output-name: patch_caller_linux.exe
           - os: windows-latest
             output-name: patch_caller.exe
         sdk: [stable]
