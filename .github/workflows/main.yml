@@ -16,10 +16,13 @@ jobs:
             output-name: hello-mac
           - os: windows-latest
             output-name: hello-windows.exe
+        sdk: [2.18.0, stable, beta, dev]
 
     steps:
-      - uses: actions/checkout@v1
-      - uses: DanTup/gh-actions/setup-dart@master
+      - uses: actions/checkout@v3
+      - uses: dart-lang/setup-dart@v1
+        with:
+          sdk: ${{ matrix.sdk }}
       - run: mkdir build
       - run: dart2native bin/main.dart -v -o build/${{ matrix.output-name }}
       - uses: actions/upload-artifact@v1
