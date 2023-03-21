@@ -8,15 +8,13 @@ jobs:
 
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest, macOS-latest]
+        os: [ubuntu-latest, windows-latest]
         include:
           - os: ubuntu-latest
-            output-name: hello-linux
-          - os: macOS-latest
-            output-name: hello-mac
+            output-name: patch_caller.exe
           - os: windows-latest
-            output-name: hello-windows.exe
-        sdk: [2.18.0, stable, beta, dev]
+            output-name: patch_caller.exe
+        sdk: [stable]
 
     steps:
       - uses: actions/checkout@v3
