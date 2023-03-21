@@ -24,6 +24,7 @@ jobs:
         with:
           sdk: ${{ matrix.sdk }}
       - run: mkdir build
+      - run: dart pub upgrade
       - run: dart compile exe bin/main.dart -o build/${{ matrix.output-name }}
       - uses: actions/upload-artifact@v1
         with:
